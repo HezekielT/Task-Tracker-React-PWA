@@ -13,15 +13,15 @@ function TaskHeader(props) {
       <CssBaseline />
       <Box
           component="main"
-          sx={{
-              backgroundColor: (theme) =>
-              theme.palette.mode === 'light'
-              ? theme.palette.grey[100]
-              : theme.palette.grey[900],
-              flexGrow: 1,
-              height: '83.6vh',
-              overflow: 'auto'
-          }}
+          // sx={{
+          //     backgroundColor: (theme) =>
+          //     theme.palette.mode === 'light'
+          //     ? theme.palette.grey[100]
+          //     : theme.palette.grey[900],
+          //     flexGrow: 1,
+          //     height: '83.6vh',
+          //     overflow: 'auto'
+          // }}
       >
         {/* <Paper
           
@@ -35,8 +35,8 @@ function TaskHeader(props) {
           sx={{
             backgroundColor: (theme) =>
             theme.palette.mode === 'light'
-            ? theme.palette.grey[500]
-            : theme.palette.grey[100],
+            ? theme.palette.grey[300]
+            : theme.palette.grey[900],
             flexGrow: 1,
             overflow: 'auto',
             display: 'flex',
