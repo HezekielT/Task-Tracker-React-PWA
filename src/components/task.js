@@ -12,16 +12,7 @@ import TaskItems from "./task_items";
 const theme = createTheme();
 
 export function Task(props) {
-  const [tasks, setTasks] = useLocalStorage('list', []);
-  function createTask(task) {
-    setTasks( prevTask => {
-      if (prevTask != null) {
-        return [ ...prevTask, {task}]
-      } else {
-        return [{ task }]
-      }
-    })
-  }
+  
 
   return (
     <ThemeProvider theme={theme}
@@ -36,9 +27,7 @@ export function Task(props) {
       // }}
     >
       {/* <TaskHeader add={add} onClick={(value) => setAdd(value)}/> */}
-      {(props.add) ? 
-      <TaskForm onClick={createTask}/>
-      : <TaskItems tasks={tasks}/>}
+      {(props.add) ? <TaskForm /> : <TaskItems />}
     </ThemeProvider>
   );
 };

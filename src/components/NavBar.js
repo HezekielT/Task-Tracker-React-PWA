@@ -42,7 +42,7 @@ function NavBar(props) {
                                 fontSize: '15px',
                                 fontFamily: 'inherit',
                             }}
-                            onClick={(e) => props.onClick(!props.add)}
+                            onClick={() => props.onClick(!props.add)}
                             >
                              {(props.add) ? "Close" : "Add"}
                             </Button>

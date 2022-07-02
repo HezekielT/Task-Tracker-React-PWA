@@ -4,12 +4,16 @@ import { createTheme, CssBaseline,
     Button, Typography, Switch } from '@mui/material';
 // import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import React, { useState } from 'react';
+import { useTask } from '../contexts/TaskProvider';
+import { v4 as uuidV4 } from 'uuid';  
 
 const theme = createTheme();
 
 function TaskForm(props) {
+    const { createTask } = useTask();
 
     const [form, setForm] = useState({
+        id: "",
         task: "",
         day: "",
         reminder: false,
@@ -18,7 +22,10 @@ function TaskForm(props) {
     function handleSubmit(e) {
         // console.log("hello m")
         e.preventDefault();
-        props.onClick(form);
+        const id = uuidV4();
+        console.log(id);
+        () => updateForm({id: id});
+        createTask(form);
         updateForm({task:"", day: "",reminder: false});
 
     }
@@ -79,7 +86,7 @@ function TaskForm(props) {
                             fullWidth
                             variant="contained"
                             sx={{ mt: 3, mb: 2 }}
-                            onClick = {handleSubmit}
+                            // onClick = {handleSubmit}
                         >
                             Save
                         </Button>
