@@ -1,4 +1,4 @@
-import { AppBar, Typography, Toolbar, Grid, TextField,Container, Box, CssBaseline, ThemeProvider, createTheme } from "@mui/material"
+import { AppBar, Button, Typography, Toolbar, Grid, TextField,Container, Box, CssBaseline, ThemeProvider, createTheme } from "@mui/material"
 import React from 'react';
 
 const theme = createTheme();
@@ -27,6 +27,25 @@ function NavBar(props) {
                             >
                                 Track My Tasks
                             </Typography>
+                            <Button 
+                                varinat="contained" 
+                                sx={{ 
+                                display: 'inline-block',
+                                background: '#fff',
+                                color: '#000',
+                                border: 'none',
+                                padding: '10px 20px',
+                                margin: '10px',
+                                borderRadius: '5px',
+                                cursor: 'pointer',
+                                textDecoration: 'none',
+                                fontSize: '15px',
+                                fontFamily: 'inherit',
+                            }}
+                            onClick={(e) => props.onClick(!props.add)}
+                            >
+                             {(props.add) ? "Close" : "Add"}
+                            </Button>
                         </Toolbar>
                     </Container>
                 </AppBar>

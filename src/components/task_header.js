@@ -8,6 +8,8 @@ import { Container,
 const theme = createTheme();
 
 function TaskHeader(props) {
+
+    console.log(props.add)
     return (
        <React.Fragment> 
       <CssBaseline />
@@ -33,10 +35,10 @@ function TaskHeader(props) {
         <Grid
           container
           sx={{
-            backgroundColor: (theme) =>
-            theme.palette.mode === 'light'
-            ? theme.palette.grey[300]
-            : theme.palette.grey[900],
+            // backgroundColor: (theme) =>
+            // theme.palette.mode === 'light'
+            // ? theme.palette.grey[300]
+            // : theme.palette.grey[900],
             flexGrow: 1,
             overflow: 'auto',
             display: 'flex',
@@ -80,6 +82,7 @@ function TaskHeader(props) {
                 fontSize: '15px',
                 fontFamily: 'inherit',
                }}
+               onClick={(e) => props.onClick(!props.add)}
               >
               Add
             </Button>
