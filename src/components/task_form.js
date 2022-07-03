@@ -13,8 +13,7 @@ function TaskForm(props) {
     const { createTask } = useTask();
 
     const [form, setForm] = useState({
-        id: "",
-        task: "",
+        task_name: "",
         day: "",
         reminder: false,
     })
@@ -24,9 +23,8 @@ function TaskForm(props) {
         e.preventDefault();
         const id = uuidV4();
         console.log(id);
-        () => updateForm({id: id});
-        createTask(form);
-        updateForm({task:"", day: "",reminder: false});
+        createTask(id, form);
+        updateForm({task_name:"", day: "",reminder: false});
 
     }
 
@@ -61,8 +59,8 @@ function TaskForm(props) {
                             label="Task"
                             name="task"
                             autoFocus
-                            value={form.task}
-                            onChange={(e) => updateForm({ task: e.target.value })}
+                            value={form.task_name}
+                            onChange={(e) => updateForm({ task_name: e.target.value })}
                         />
                         <TextField 
                             margin="normal"
