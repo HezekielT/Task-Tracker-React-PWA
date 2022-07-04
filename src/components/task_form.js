@@ -23,7 +23,7 @@ function TaskForm(props) {
         e.preventDefault();
         const id = uuidV4();
         console.log(id);
-        createTask(id, form);
+        createTask(id, form.task_name, form.day, form.reminder);
         updateForm({task_name:"", day: "",reminder: false});
 
     }
