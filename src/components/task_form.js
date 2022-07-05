@@ -78,7 +78,7 @@ function TaskForm(props) {
                             onChange={(e) => updateForm({ day: e.target.value })}
                             renderInput={(params) => <TextField {...params} />}
                         /> */}
-                        <Switch checked={form.reminder} onChange={(e) => updateForm({ reminder: e.target.checked})} label={"Remind Me"}/>
+                        <Switch checked={form.reminder} onChange={(e) => updateForm({ reminder: e.target.checked})} /> Remind Me
                         <Button
                             type="submit"
                             fullWidth
